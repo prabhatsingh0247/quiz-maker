@@ -1,0 +1,9 @@
+<section style="text-align: left;">
+<ng-container *ngIf="isResultVisible">
+    <app-quiz  [answers]="answers" [isResult]="true"></app-quiz>
+    <div class="result-bar" [ngClass]="barColor">
+        You scored {{score}} out of {{totalCount}}
+    </div>
+    <button (click)="createNewQuiz()" class="btn btn-new-quiz">Create a new quiz</button>
+</ng-container>    
+</section>

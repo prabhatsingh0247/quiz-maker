@@ -1,0 +1,30 @@
+
+    <div class="form" style="text-align: center;">
+      <form [formGroup]="quizCategoryForm" (submit)="showQuizForm()">
+        <div>
+          <select id="categorySelect"
+            formControlName="category" class="category"
+          >
+            <option value="">Select a category</option>
+            <option [ngValue]="cat.id" *ngFor="let cat of categoryList">
+              {{ cat.name }}
+            </option>
+          </select>
+
+          <select id="difficultySelect"
+            formControlName="difficulty"
+            class="difficulty"
+          >
+            <option value="">Select difficulty</option>
+            <option *ngFor="let level of levelList">
+              {{ level }}
+            </option>
+          </select>
+          <button id="createBtn" type="submit" class="btn" [disabled]="quizCategoryForm.invalid">
+            Create
+          </button>
+        </div>
+      </form>
+    </div>
+
+<app-quiz-questions *ngIf="quizAnswersVisible" [questions]="questions"></app-quiz-questions>

@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@use './styles/variables' as var;
+@use './styles/mixins.scss' as *;
+.btn {
+    border: 1px solid var.$grey;
+    background: var.$white;
+    height: 35px;
+    @include border-radius(0, 5px, 5px, 0);
+    padding: 0 15px;
+    cursor: pointer;
+    &:hover {
+        background: #6c757d;
+        color: var.$white;
+    }
+}

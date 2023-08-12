@@ -1,0 +1,30 @@
+@use '../../styles/variables' as var;
+@use '../../styles/mixins.scss' as *;
+
+.form {
+    select {
+        border-radius: 5px;
+        height: 35px;
+        border: 1px solid var.$grey;
+        min-width: 350px;
+        padding: 0 5px;
+        &.category {
+            @include border-radius(5px, 0, 0, 5px)
+        }
+        &.difficulty{
+            @include border-radius(0, 0, 0, 0)
+        }
+    }
+    .btn {
+        border: 1px solid var.$grey;
+        background: var.$white;
+        height: 35px;
+        @include border-radius(0, 5px, 5px, 0);
+        padding: 0 15px;
+        cursor: pointer;
+        &:hover {
+            background: var.$grey;
+        }
+    }
+    
+}

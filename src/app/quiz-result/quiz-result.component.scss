@@ -1,0 +1,21 @@
+@use '../../styles/variables' as var;
+.result-bar {
+    width: 300px;
+    height: 20px;
+    display: block;
+    padding: 5px;
+    text-align: center;
+}
+.red {
+    background: var.$red;
+}
+.yellow {
+    background: var.$yellow;
+}
+.green {
+    background: var.$green;
+}
+.btn-new-quiz{
+    border-radius: 5px;
+    margin-top: 20px;
+}

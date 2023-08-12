@@ -1,0 +1,6 @@
+<section style="text-align: left;">
+
+<app-quiz #quiz *ngIf="isQuizVisible" [answers]="answers" [isAnswers]="true"></app-quiz>
+</section>
+
+<button *ngIf="isSubmitBtnEnabled" (click)="submitAnswers()" class="btn btn-form">Submit</button>

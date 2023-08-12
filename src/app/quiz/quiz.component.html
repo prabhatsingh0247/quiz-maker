@@ -1,0 +1,21 @@
+<form #quizForm="ngForm">
+<section style="text-align: left;">
+    <div *ngFor="let data of answers; let parentIndex = index" class="answers">
+        <h4 [innerHTML]="data.question"></h4>
+        <ng-container *ngFor="let option of data.options; let childIndex = index">
+            
+                <label *ngIf="isAnswers; else isResult" for="{{'option-'+parentIndex+childIndex}}" [ngClass]="{'selected': option.isChecked}">
+                    {{option.label}}
+                    <input required  (change)="select(childIndex, data.options)" [name]="data.correct_answer" [value]="option.label" type="radio" id="{{'option-'+parentIndex+childIndex}}" [(ngModel)]="data.selected">
+                </label>
+            
+            <ng-template #isResult>
+                <label [ngClass]="{'selected': option.isChecked, 'incorrect-answer': option.isIncorrectAnswer}">
+                    {{option.label}}
+                    <input disabled [name]="data.correct_answer" [value]="option.label" type="radio" id="{{'option-'+parentIndex+childIndex}}">
+                </label>
+              </ng-template>
+            </ng-container>
+    </div>
+    </section>
+</form>
